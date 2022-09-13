@@ -12,3 +12,9 @@ mongoose
   })
   .then(() => console.log('connection established'))
   .catch(error => console.log('not connected:', error))
+
+const Panda = mongoose.model('Panda', { name: String, age: Number })
+
+const panda = new Panda({ name: 'jenna', age: 5 })
+
+panda.save().then(() => console.log(`We have a new Panda , ${panda.name}!`))
